@@ -22,8 +22,9 @@ COPY --from=build /app/target/*.jar app.jar
 # Criar diretório de downloads
 RUN mkdir -p /app/downloads && chmod 777 /app/downloads
 
-# Porta
-EXPOSE 8080
+# Configurar porta
+ENV PORT=10000
+EXPOSE 10000
 
 # Comando para rodar
 CMD ["java", "-jar", "app.jar"]

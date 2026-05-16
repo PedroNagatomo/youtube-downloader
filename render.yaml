@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: youtube-downloader-api
+    env: docker
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
