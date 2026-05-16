@@ -1,4 +1,4 @@
-#YouTube Downloader
+# 🎥 YouTube Downloader
 
 Aplicação full-stack para baixar vídeos do YouTube em formato MP4, com suporte a múltiplos downloads simultâneos.
 
