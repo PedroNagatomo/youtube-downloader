@@ -1,12 +1,8 @@
 # Estágio 1: Build com Maven
 FROM maven:3.9-eclipse-temurin-17 AS build
 WORKDIR /app
-
-# Copiar arquivos do projeto
 COPY pom.xml .
 COPY src ./src
-
-# Compilar o projeto
 RUN mvn clean package -DskipTests
 
 # Estágio 2: Runtime
@@ -16,7 +12,7 @@ WORKDIR /app
 # Instalar Python, ffmpeg e yt-dlp
 RUN apt-get update && \
     apt-get install -y python3 python3-pip ffmpeg && \
-    pip3 install --break-system-packages yt-dlp && \
+    pip3 install yt-dlp && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
